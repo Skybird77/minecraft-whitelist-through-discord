@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "discord-fabric-commands",
+	"version": "${version}",
+	"name": "Discord-Fabric-Commands",
+	"description": "This Fabric 1.21.5 mod allows discord users to send commands to a Minecraft server.",
+	"authors": [
+		"Spencer Maples"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/discord-fabric-commands/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"main": [
+			"com.github.skybird77.DiscordFabricCommands"
+		],
+		"client": [
+			"com.github.skybird77.DiscordFabricCommandsClient"
+		]
+	},
+	"mixins": [
+		"discord-fabric-commands.mixins.json",
+		{
+			"config": "discord-fabric-commands.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
